@@ -114,6 +114,48 @@ The Bliss project is built using PHP, MySQL, HTML, CSS, and JavaScript, with a s
 - **uploads/**: Directory for uploaded files.
 - **views/**: View templates for the UI (e.g., `attendance.php`, `attendance_view.php`, `dashboard_view.php`, `profile_view.php`, etc.).
 
+```
+bliss/
+├── assets/
+│   ├── css/
+│   ├── images/
+│   └── js/
+│       └── javascript.js
+├── config/
+│   └── config.php
+├── controllers/
+│   ├── AttendanceController.php
+│   ├── PaymentController.php
+│   └── ProfileController.php
+├── includes/
+│   ├── db_connect.php
+│   ├── footer.php
+│   └── header.php
+├── logs/
+├── models/
+│   ├── caregivers.php
+│   ├── child.php
+│   ├── invoice.php
+│   └── user.php
+├── uploads/
+│   ├── attendance_view.php
+│   ├── dashboard_view.php
+│   ├── profile_view.php
+│   ├── attendance.php
+│   ├── care_plan.php
+│   ├── caregiver_apply.php
+│   ├── dashboard.php
+│   ├── index.php
+│   ├── invoice.php
+│   ├── learning_journey.php
+│   ├── log_activity.php
+│   ├── login.php
+│   ├── logout.php
+│   ├── meal_plan.php
+│   ├── process_payment.php
+│   └── register.php
+```
+
 ## Usage
 
 - **Parents/Guardians**: Log in to view attendance, activities, invoices, and manage child profiles.
