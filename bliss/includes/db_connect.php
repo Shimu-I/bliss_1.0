@@ -1,7 +1,7 @@
 <?php
 session_start();
 $host = 'localhost';
-$dbname = 'daycare_management';
+$dbname = 'dcm';
 $username = 'root';
 $password = 'admin';
 

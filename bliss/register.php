@@ -3,19 +3,49 @@ include 'includes/db_connect.php';
 include 'includes/header.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $role_id = $_POST['role_id'];
-    $password = $_POST['password']; // No hashing, store as plain text
+    $first_name = trim($_POST['first_name']);
+    $last_name = trim($_POST['last_name']);
+    $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_EMAIL);
+    $phone = trim($_POST['phone']);
+    $role_id = (int)$_POST['role_id'];
+    $password = trim($_POST['password']);
 
-    $sql = "INSERT INTO users (role_id, first_name, last_name, email, phone, password) VALUES (?, ?, ?, ?, ?, ?)";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("isssss", $role_id, $first_name, $last_name, $email, $phone, $password);
-    $stmt->execute();
-
-    echo "<p class='text-success'>Registration successful!</p>";
+    // Validate inputs
+    if (empty($first_name) || empty($last_name) || empty($email) || empty($phone) || empty($role_id) || empty($password)) {
+        echo "<p class='text-danger'>All fields are required!</p>";
+    } elseif (strlen($password) < 8) {
+        echo "<p class='text-danger'>Password must be at least 8 characters long!</p>";
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<p class='text-danger'>Invalid email format!</p>";
+    } else {
+        // Check for duplicate email
+        $sql_check = "SELECT user_id FROM users WHERE email = ?";
+        $stmt_check = $conn->prepare($sql_check);
+        if (!$stmt_check) {
+            echo "<p class='text-danger'>Database error: " . $conn->error . "</p>";
+        } else {
+            $stmt_check->bind_param("s", $email);
+            $stmt_check->execute();
+            if ($stmt_check->get_result()->num_rows > 0) {
+                echo "<p class='text-danger'>Email already registered!</p>";
+            } else {
+                $sql = "INSERT INTO users (role_id, first_name, last_name, email, phone, password) VALUES (?, ?, ?, ?, ?, ?)";
+                $stmt = $conn->prepare($sql);
+                if (!$stmt) {
+                    echo "<p class='text-danger'>Database error: " . $conn->error . "</p>";
+                } else {
+                    $stmt->bind_param("isssss", $role_id, $first_name, $last_name, $email, $phone, $password);
+                    if ($stmt->execute()) {
+                        echo "<p class='text-success'>Registration successful!</p>";
+                    } else {
+                        echo "<p class='text-danger'>Registration failed: " . $conn->error . "</p>";
+                    }
+                    $stmt->close();
+                }
+            }
+            $stmt_check->close();
+        }
+    }
 }
 ?>
 
