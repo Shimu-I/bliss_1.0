@@ -1,0 +1,96 @@
+/* Services starts */
+
+
+body {
+    background: url('../images/caregiver-bg.png') no-repeat center/cover; 
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+
+.heading span:first-child {
+
+    font-size: 3rem;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.heading span:last-child {
+    font-size: 3rem;
+    color: var(--orange);
+    text-transform: uppercase;
+}
+
+
+
+.services {
+    
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+
+}
+
+.services h1 {
+    padding-top: 100px;
+    font-size: 3rem;
+    text-align: center;
+    color: var(--black);
+}
+
+.services h2 {
+    padding-top: 10px;
+    font-size: 2rem;
+    margin-top: 10px;
+    text-align: center;
+    color: var(--black);
+}
+
+.cards {
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid var(--orange);
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    margin: 10px;
+    padding: 20px;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.card img {
+
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    color: var(--pink);
+    margin-top: 10px;
+}
+
+.card p {
+    color: var(--black);
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+}
+
+
+/*  Services ends  */
