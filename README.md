@@ -129,7 +129,7 @@ To address potential gaps and improve usability, the following enhancements are 
      ```
 5. Start the development server:
    ```bash
-   php artisan serve
+   php -S localhost:8000
    ```
 6. Access the application at `http://localhost:8000`.
 
