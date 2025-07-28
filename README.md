@@ -160,4 +160,4 @@ Contributions are welcome! Please follow these steps:
 This project is licensed under the MIT License.
 
 ## Contact
-For inquiries or feedback, reach out to [your-email@example.com](mailto:jasmin8sultana8shimu.com).
+For inquiries or feedback, reach out to [jasmin8sultana8shimu@gmail.com](mailto:jasmin8sultana8shimu@gmail.com)
