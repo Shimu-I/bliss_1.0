@@ -1,0 +1,114 @@
+/* About Us */
+.about {
+    background: var(--pink);
+    padding-top: 110px;
+    height: 100%;
+}
+
+
+.about .heading {
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bolder;
+    margin-bottom: 1rem;
+}
+
+.about .heading span:nth-child(1) {
+    color: var(--orange);
+    text-transform: uppercase;
+
+}
+
+.about .heading span:nth-child(2) {
+    color: var(--black);
+    text-transform: uppercase;
+
+}
+
+
+
+.about .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.about .row .image {
+    flex: 1 1 50rem;
+}
+
+.about .row .image img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -20px;
+}
+
+.about .row .content {
+    flex: 1 1 30rem;
+    position: relative;
+    top: -10px;
+}
+
+.about .row .content h3 {
+    font-size: 2.8rem;
+    color: var(--white);
+    line-height: 1.5;
+    margin-bottom: 1.8rem;
+}
+
+.about .row .content p {
+    font-size: 1.5rem;
+    color: var(--white);
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.about .box-container {
+    background: var(--pink);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.about .box-container .box {
+    flex: 1;
+    min-width: 250px;
+    padding: 10px;
+    background: var(--white);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--orange);
+}
+
+.about .box-container .box i {
+    font-size: 2rem;
+    color: var(--pink);
+    margin-bottom: 10px;
+}
+
+.about .box-container .box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--black);
+}
+
+.about .box-container .box a {
+    color: var(--pink);
+    font-size: 1.2rem;
+    word-break: break-word;
+}
+
+.about .box-container .box a:hover {
+    text-decoration: underline;
+}
+
+.about .box-container .box address {
+    color: var(--pink);
+    font-style: normal;
+    font-size: 1.2rem;
+}

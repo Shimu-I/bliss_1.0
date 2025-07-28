@@ -1,0 +1,248 @@
+.button-container {
+    display: flex;
+    gap: 10px; /* Space between the buttons */
+    margin-top: 20px;
+    justify-content: center; /* Center buttons horizontally */
+}
+
+/* Style for all buttons */
+.button-container a {
+    display: flex; /* Use flexbox to easily center content */
+    align-items: center; /* Vertically center the text */
+    justify-content: center; /* Horizontally center the text */
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    width: 150px; /* Fixed width */
+    height: 30px; /* Fixed height */
+    cursor: pointer;
+    margin: 10px 0;
+    transition: background-color 0.3s ease;
+    box-sizing: border-box; /* Ensures padding is included in width and height */
+}
+
+
+/* Separate CSS for the "Register Your Child" Button */
+.register-child-btn {
+    background-color: var(--orange); /* Button background color */
+}
+
+.register-child-btn:hover {
+    background-color: var(--box-shadow); /* Changes background color on hover */
+    border: 1px solid var(--orange);
+}
+
+/* Style for the Update Button */
+.update-btn {
+    background-color: var(--pink); /* Pink background for update */
+}
+
+.update-btn:hover {
+    background-color: var(--box-shadow); /* Changes background color on hover */
+    border: 1px solid var(--pink);
+}
+
+/* Style for the Delete Button */
+.delete-btn {
+    background-color: #f44336; /* Red background for delete */
+}
+
+.delete-btn:hover {
+    background-color: var(--box-shadow); /* Changes background color on hover */
+    border: 1px solid #f44336; /* Darker red on hover */
+}
+
+
+
+
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 3em;
+    color: var(--black);
+}
+
+
+.parent-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid var(--orange);
+}
+
+.parent-profile .heading span:nth-child(1) {
+    color: var(--orange);
+    text-transform: uppercase;
+}
+
+.parent-profile .heading span:nth-child(2) {
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.profile-details,
+.children-info,
+.billing-info,
+.notifications {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.parent-info {
+    text-align: center;
+}
+
+.parent-info h2 {
+    margin: 10px 0;
+    font-size: 1.7em;
+    color: var(--black);
+}
+
+.parent-info p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: var(--light-color);
+}
+
+/* Children Information Styles */
+.children-info {
+    margin-top: 30px;
+}
+
+.children-info h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--black);
+}
+
+.children-info .children-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.child-card {
+    width: 45%;
+    border: 1px solid var(--orange);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.child-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange);
+}
+
+.child-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: var(--black);
+}
+
+.child-card p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: var(--light-color);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    color: var(--white);
+    background-color: var(--pink);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--orange);
+}
+
+
+/* Billing Information Styles */
+.billing-info {
+    margin-top: 30px;
+}
+
+.billing-info h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--black);
+}
+
+.billing-info .billing-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.bill-card {
+    width: 45%;
+    border: 1px solid var(--orange);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.bill-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange);
+}
+
+.bill-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: var(--black);
+}
+
+.bill-card p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: var(--light-color);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 30px; /* Increase padding */
+    font-size: 0.9em;
+    color: var(--white);
+    background-color: var(--pink);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    min-width: 150px; /* Set minimum width */
+}
+
+.btn:hover {
+    background-color: var(--orange);
+}

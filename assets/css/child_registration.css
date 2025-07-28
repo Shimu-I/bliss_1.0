@@ -1,0 +1,361 @@
+/* Separate CSS for the "Go Back" Button */
+#go-back-btn {
+
+    background-color: var(--orange);
+    /* Button background color */
+    color: white;
+    /* White text */
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2px 0;
+    /* Reduced spacing around the button */
+    display: block;
+    /* Ensures the button takes its own line */
+    text-align: center;
+    width: 150px;
+    /* You can adjust the width if needed */
+}
+
+
+#go-back-btn:hover {
+    background-color: var(--box-shadow);
+    /* Darker blue on hover */
+    border: 1px solid var(--orange);
+}
+
+
+
+
+
+/*
+child registration starts
+*/
+.child-registration {
+    width: 90%;
+    max-width: 1200px;
+    /* Optional: set a max width */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    margin: 0 auto;
+    /* Center horizontally */
+    margin-top: 80px;
+    margin-bottom: 100px;
+    /* Ensuring the form doesn't overlap with footer */
+    flex-grow: 1;
+    /* Make sure this section takes up available space */
+    background: url(../images/doodle.png) no-repeat center/cover;
+
+    background-color: var(--pink);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* This allows the form to grow and push footer down */
+}
+
+.child-registration .row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: none;
+    margin-right: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.child-registration .row>div {
+    flex-grow: 1;
+    box-sizing: border-box;
+    /* Ensure padding/margin doesn't cause overflow */
+}
+
+.child-registration .image {
+    flex: 1 1 50%;
+    text-align: center;
+    max-width: 50%;
+}
+
+.child-registration .image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.child-registration-form {
+    flex: 1 1 50%;
+    padding: 20px;
+    max-width: 50%;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--orange);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.child-registration-form .box {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.child-registration-form h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--orange);
+    width: 100%;
+}
+
+.child-registration-form label {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+}
+
+.child-registration-form input,
+.child-registration-form select,
+.child-registration-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--orange);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--dark-gray);
+    box-sizing: border-box;
+}
+
+/* Adjust Medical History and Special Needs to appear in one row */
+.child-registration-form .medical_history---special_needs-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.child-registration-form .medical_history---special_needs-row>div {
+    flex: 1;
+    min-width: 48%;
+    /* Ensure each field doesn't shrink too much */
+}
+
+/* Adjust Parent Email and Phone Number to appear in one row */
+.child-registration-form .parent_email---parent_phone-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+}
+
+.child-registration-form .parent_email---parent_phone-row>div {
+    flex: 1;
+    min-width: 48%;
+    /* Ensure each field doesn't shrink too much */
+}
+
+.child-registration-form .input-box {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--orange);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--dark-gray);
+}
+
+
+.child-registration-form .dob---gender-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.child-registration-form .dob---gender-row>div {
+    flex: 1;
+}
+
+.child-registration-form .inline-btn {
+    display: block;
+    background: var(--orange);
+    color: var(--white);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.child-registration-form .inline-btn:hover {
+    background: #e76f75;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    border-radius: 5px;
+}
+
+
+/* Child Registration Section */
+.child-registration {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    background: var(--white);
+    border-radius: 10px;
+    margin: 20px auto;
+    box-shadow: var(--box-shadow);
+    margin-top: 130px;
+    /* Increase this value to move the section lower */
+    border: 1px solid var(--orange);
+}
+
+
+
+
+
+/*
+child registration ends
+*/
+
+
+
+
+
+
+
+
+
+
+
+/* Custom CSS for "Register Your Child" button */
+.register-child-btn {
+    color: white;
+    background-color: #4CAF50;
+    /* Green background */
+    padding: 12px 25px;
+    /* Adjust padding */
+    border-radius: 8px;
+    /* Round corners */
+    text-decoration: none;
+    /* Remove underline */
+    font-size: 16px;
+    /* Adjust font size */
+    font-weight: bold;
+    /* Make the text bold */
+    display: inline-block;
+    /* Make sure it behaves like a block-level element */
+    transition: background-color 0.3s ease;
+    /* Smooth background color change on hover */
+}
+
+/* Hover effect */
+.register-child-btn:hover {
+    background-color: #45a049;
+    /* Slightly darker green on hover */
+}
+
+
+
+
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .child-registration {
+        width: 95%;
+        /* Adjust width for medium screens */
+        padding: 40px 15px;
+        /* Reduce padding for smaller screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .child-registration {
+        width: 100%;
+        /* Full width for small screens */
+        padding: 30px 10px;
+        /* Adjust padding for better fit */
+        margin-top: 40px;
+        /* Move section a bit higher on small screens */
+    }
+
+    .child-registration-form {
+        width: 100%;
+        /* Ensure form takes full width */
+    }
+
+    .row {
+        flex-direction: column;
+        /* Stack the form and image vertically */
+        align-items: center;
+        /* Center the content */
+    }
+
+    .image {
+        width: 100%;
+        /* Make image responsive */
+        text-align: center;
+        /* Center the image */
+    }
+
+    .image img {
+        max-width: 80%;
+        /* Make image size responsive */
+    }
+}
+
+@media (max-width: 480px) {
+    .child-registration {
+        padding: 20px 10px;
+        /* Further reduce padding for very small screens */
+    }
+
+    .child-registration-form {
+        padding: 15px;
+        /* Ensure form fields have enough space */
+    }
+
+    .input-box {
+        font-size: 0.9rem;
+        /* Reduce font size for smaller screens */
+    }
+
+    .inline-btn {
+        font-size: 0.9rem;
+        /* Adjust button font size */
+        padding: 8px 15px;
+        /* Adjust button padding */
+    }
+}

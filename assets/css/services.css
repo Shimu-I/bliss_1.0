@@ -1,0 +1,131 @@
+/* Services starts */
+
+
+body {
+    background: url('../images/doodle.png') no-repeat center center;
+    background-size: cover;
+    /* ensures it covers full width & height */
+    background-attachment: fixed;
+    /* optional: keeps background fixed when scrolling */
+    background-color: var(--pink);
+    /* fallback color */
+    margin: 0;
+    height: 100vh;
+    /* makes sure body covers full screen */
+    line-height: 1.6;
+    justify-content: center;
+}
+
+.text-box {
+    background: white;
+
+    padding: 1rem 2rem;
+    /* spacing inside box */
+    border-radius: 10px;
+    /* rounded corners */
+    display: inline-block;
+    /* shrink box to text size */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin: 20px auto;
+    /* center horizontally */
+
+    width: auto;
+}
+
+.heading {
+    font-size: 3rem;
+    text-align: center;
+    /* center the inline-block box */
+    display: block;
+    /* ensures h1 takes full line */
+}
+
+
+.heading span:first-child {
+
+    font-size: 3rem;
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.heading span:last-child {
+    font-size: 3rem;
+    color: var(--orange);
+    text-transform: uppercase;
+}
+
+
+
+/* Push content below the fixed header */
+.services {
+    max-width: 1200px;
+    margin: auto;
+    padding: 120px 20px 20px;
+    /* top padding pushes content down */
+    margin-bottom: 100px;
+}
+
+
+.services h1 {
+
+    font-size: 3rem;
+    text-align: center;
+    color: var(--black);
+}
+
+.services h2 {
+    padding-top: 10px;
+    font-size: 2rem;
+    margin-top: 10px;
+    text-align: center;
+    color: var(--black);
+}
+
+.cards {
+
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid var(--orange);
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    margin: 10px;
+    padding: 20px;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.card img {
+
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.card h3 {
+    color: var(--pink);
+    margin-top: 10px;
+}
+
+.card p {
+    color: var(--black);
+}
+
+@media (max-width: 768px) {
+    .card {
+        width: calc(33.333% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 100%;
+    }
+}
+
+
+/*  Services ends  */

@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root {
+    --orange: #f9ba60;
+    --pink: #e9768f;
+    --black: #1d1c1c;
+    --white: #fff;
+    --light-color: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+}
+
+section {
+    padding: 3rem 7%;
+}
+
+.heading {
+    font-size: 4rem;
+    color: var(--black);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-bottom: 6rem;
+}
+
+.heading span {
+    color: var(--orange);
+    text-transform: uppercase;
+}
+
+.btn {
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--orange);
+    color: var(--orange);
+    background: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--orange);
+    color: var(--white);
+}
+
+/* Home Section */
+.home {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    position: relative;
+}
+
+.home .content {
+    flex: 1 1 40rem;
+    padding-top: 6rem;
+    text-align: left;
+}
+
+.home .content h3 {
+    font-size: 6rem;
+    color: var(--black);
+
+
+}
+
+.home .content h3 span {
+    color: var(--orange);
+}
+
+.home .content p {
+
+    font-size: 2rem;
+    color: var(--light-color);
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.home .image {
+    flex: 1 1 40rem;
+}
+
+.home .image img {
+    width: 100%;
+    /* Prevent image overflow */
+    max-width: 100%;
+    padding: 4rem;
+}
+
+section {
+    padding: 3rem 5%;
+    /* Adjust padding to prevent horizontal overflow */
+    max-width: 100%;
+    /* Ensure no overflow */
+}
+
+.home .btn {
+    font-size: 1.3rem;
+    padding: 12px 28px;
+    background-color: var(--pink);
+    color: white;
+    border: 1px solid var(--orange);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.home .btn:hover {
+    background-color: var(--orange);
+}
+
+.custom-shape-divider-bottom-1684324473 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1684324473 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 107px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1684324473 .shape-fill {
+    fill: var(--pink);
+}

@@ -1,0 +1,129 @@
+
+body {
+    
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--white);
+    margin: 0;
+    padding: 0;
+}
+
+.heading {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 3em;
+    color: var(--black);
+}
+
+
+.caregiver-profile .heading span:nth-child(1) {
+    color: var(--orange);
+    text-transform: uppercase;
+    
+}
+
+.caregiver-profile .heading span:nth-child(2) {
+    color: var(--black);
+    text-transform: uppercase;
+    
+}
+
+
+.profile-details,
+.assigned-children {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+}
+
+.caregiver-info {
+    text-align: center;
+}
+
+.caregiver-info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border: 2px solid var(--orange); /* Added orange border */
+}
+
+.caregiver-info h2 {
+    margin: 10px 0;
+    font-size: 1.7em;
+    color: var(--black);
+}
+
+.caregiver-info p {
+    margin: 5px 0;
+    font-size: 1em;
+    color: var(--light-color);
+}
+
+/* Assigned Children Styles */
+.assigned-children {
+    margin-top: 30px;
+}
+
+.assigned-children h2 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--black);
+}
+
+.assigned-children .children-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.child-card {
+    width: 45%;
+    border: 1px solid var(--orange);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.child-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--orange);
+}
+
+
+.child-card h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+    color: var(--black);
+}
+
+.child-card p {
+    margin: 5px 0;
+    font-size: 0.9em;
+    color: var(--light-color);
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    color: var(--white);
+    background-color: var(--pink);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--orange);
+}
+
+

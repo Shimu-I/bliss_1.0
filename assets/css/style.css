@@ -1,0 +1,922 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange: #f9ba60;
+    --pink: #e9768f;
+    --black: #1d1c1c;
+    --white: #fff;
+    --light-color: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+
+/* Prevent automatic capitalization for all input, textarea, and select elements */
+input, textarea, select {
+    text-transform: none;  /* Prevent automatic capitalization */
+    -webkit-autocapitalize: none;  /* For iOS Safari */
+    -moz-appearance: none;  /* For Firefox */
+    appearance: none;  /* For all browsers */
+}
+
+
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+section {
+    padding: 3rem 7%;
+}
+
+.heading {
+    font-size: 4rem;
+    color: var(--black);
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    margin-bottom: 6rem;
+}
+
+.heading span {
+    color: var(--orange);
+    text-transform: uppercase;
+}
+
+.btn {
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .8rem 3rem;
+    border-radius: .5rem;
+    border: .2rem solid var(--orange);
+    color: var(--orange);
+    background: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--orange);
+    color: var(--white);
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+
+
+/* Typing animation for the Welcome text */
+.wrapper {
+    text-align: center;
+}
+
+/* Text Animation */
+.welcome-text {
+    font-size: 3rem;
+    color: var(--black);
+    font-weight: 500;
+    display: inline-block;
+    position: relative;
+}
+
+/* Span Style */
+.welcome-text span {
+    color: var(--orange); /* Adjust color to fit your theme */
+    font-weight: 700;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards, textAnimation 4s ease-in-out infinite;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Text Animation (Letter by letter) */
+@keyframes textAnimation {
+    0% {
+        transform: translateX(-100%);
+    }
+    25% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    75% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+
+
+
+/* Header */
+
+.header {
+    width: 100%; /* Ensure full width for the header */
+}
+.header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+.header .logo img {
+    height: 30px; /* Adjust this value to make the logo image smaller */
+    width: auto; /* Maintain aspect ratio */
+}
+
+
+
+/* Navbar Styling */
+.header .navbar {
+    display: flex;
+    gap: 2rem;
+}
+
+.header .navbar a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: var(--black); /* Dark gray */
+    transition: color 0.3s ease;
+    font-weight: bold;
+    
+}
+
+.header .navbar a:hover {
+    color: var(--pink); /* Highlight on hover with orange */
+}
+
+/* Icons Styling */
+.header .icons {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.header .icons div {
+    font-size: 2.5rem;
+    color: var(--black); /* Dark gray */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.header .icons div:hover {
+    color: var(--pink); /* Highlight on hover with pink */
+    transform: scale(1.1); /* Slight scaling effect */
+}
+
+/* Notification Icon Specific Styling */
+#notification-btn {
+    position: relative;
+}
+
+#notification-btn::after {
+    content: '3'; /* Example notification count */
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: var(--pink); /* Use pink for the notification badge */
+    color: var(--white); /* White text */
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.2rem 0.4rem;
+    border-radius: 50%;
+}
+
+/* Menu Button Styling (for smaller screens) */
+#menu-btn {
+    display: none; /* Hidden by default */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    #menu-btn {
+        display: block;
+    }
+
+    .header .navbar {
+        display: none; /* Hide the navbar initially */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white); /* White background */
+        box-shadow: var(--box-shadow); /* Apply box shadow */
+    }
+
+    .header .navbar.active {
+        display: flex; /* Show the navbar when active */
+    }
+}
+
+.header .login-form {
+    position: absolute;
+    top: 110%; right: -110%;
+    width: 35rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    border-radius: .5rem;
+    background: var(--white);
+    text-align: center;
+}
+
+.header .login-form.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .login-form h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.header .login-form .box {
+    width: 100%;
+    margin: .7rem 0;
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: capitalize;
+}
+
+.header .login-form p {
+    font-size: 1.4rem;
+    padding: .5rem 0;
+    color: var(--light-color);
+}
+
+.header .login-form p a {
+    color: var(--orange);
+    text-decoration: underline;
+}
+
+
+/* style.css */
+header .login-form {
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    display: none;
+    /* Hide form initially */
+}
+
+header .login-form.active {
+    display: block;
+}
+
+/* Home */
+
+.home {
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    position: relative;
+}
+
+.home .content {
+    flex: 1 1 40rem;
+    padding-top: 6.5rem;
+}
+
+.home .content h3 {
+    font-size: 6rem;
+    color: var(--black);
+}
+
+.home .content h3 span {
+    color: var(--orange);
+}
+
+.home .content p {
+    font-size: 2rem;
+    color: var(--light-color);
+    line-height: 1.8;
+    padding: 1rem 0;
+}
+
+.home .image {
+    flex: 1 1 40rem;
+}
+
+
+.home .image img {
+    width: 100%; /* Prevent image overflow */
+    max-width: 100%;
+    padding: 4rem;
+}
+
+section {
+    padding: 3rem 5%; /* Adjust padding to prevent horizontal overflow */
+    max-width: 100%; /* Ensure no overflow */
+}
+
+
+.home .btn {
+    font-size: 1.3rem; 
+    padding: 12px 28px; 
+    background-color: var(--pink); 
+    color: white; 
+    border: 1px solid var(--orange);
+    border-radius: 5px; 
+    cursor: pointer; 
+    
+    
+}
+
+
+.home .btn:hover {
+    background-color: var(--orange); 
+}
+
+
+.custom-shape-divider-bottom-1684324473 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1684324473 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 107px;
+    transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1684324473 .shape-fill {
+    fill: var(--pink);
+}
+
+/* About Us */
+/* Add this to your existing CSS */
+
+
+
+.heading span:first-child {
+    font-size: 3rem;
+    color: var(--black);
+}
+
+.heading span:last-child {
+    font-size: 3rem;
+    color: var(--orange);
+}
+
+
+
+.about {
+    
+    background: var(--pink);
+    padding-top: 100px;
+    height: 100%;
+}
+
+
+.about .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.about .row .image {
+    flex: 1 1 50rem;
+}
+
+.about .row .image img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -20px;
+}
+
+.about .row .content {
+    flex: 1 1 40rem;
+    position: relative;
+    top: -10px;
+}
+
+.about .row .content h3 {
+    font-size: 2.8rem;
+    color: var(--white);
+    line-height: 1.5;
+    margin-bottom: 1.8rem;
+}
+
+.about .row .content p {
+    font-size: 1.5rem;
+    color: var(--white);
+    padding: 1rem 0;
+    line-height: 2;
+}
+
+.about .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.about .box-container .box {
+    flex: 1;
+    min-width: 250px;
+    padding: 20px;
+    background: var(--white);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--orange);
+}
+
+.about .box-container .box i {
+    font-size: 2rem;
+    color: var(--pink);
+    margin-bottom: 10px;
+}
+
+.about .box-container .box h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--black);
+}
+
+.about .box-container .box a {
+    color: var(--pink);
+    font-size: 1.2rem;
+    word-break: break-word;
+}
+
+.about .box-container .box a:hover {
+    text-decoration: underline;
+}
+
+.about .box-container .box address {
+    color: var(--pink);
+    font-style: normal;
+    font-size: 1.2rem;
+}
+
+
+
+
+
+
+
+/*
+
+user-registration starts
+*/
+
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
+}
+
+
+/* User Registration Section */
+.user-registration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1; 
+    padding: 40px 20px; 
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+    height: 100vh; 
+}
+
+
+.user-registration-form {
+    width: 100%;
+    max-width: 800px; 
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--orange);
+    box-sizing: border-box;
+}
+
+
+.user-registration-form h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--orange);
+    width: 100%;
+}
+
+
+.user-registration-form label {
+    font-size: 1.1rem;
+    color: var(--dark-gray);
+    margin-bottom: 5px;
+    display: block;
+    text-align: left;
+}
+
+
+.user-registration-form input,
+.user-registration-form select,
+.user-registration-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--orange);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--dark-gray);
+    box-sizing: border-box;
+}
+
+
+.user-registration-form .inline-btn {
+    display: block;
+    background: var(--orange);
+    color: var(--white);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    text-align: center;
+    width: 100%;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+
+.user-registration-form .inline-btn:hover {
+    background: #e76f75;
+}
+
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+    border-radius: 5px;
+}
+
+
+.user-registration-form .input-box {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--orange);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--dark-gray);
+}
+
+
+.user-registration-form .dob-gender-row,
+.user-registration-form .phone-email-row {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+
+.user-registration-form .dob-gender-row > div,
+.user-registration-form .phone-email-row > div {
+    flex: 1;
+}
+
+
+.user-registration-form .input-box {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid var(--orange);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--dark-gray);
+}
+
+
+.user-registration-form a {
+    color: var(--orange);
+    font-size: 1rem;
+    word-break: break-word;
+}
+
+
+.user-registration-form a:hover {
+    text-decoration: underline;
+}
+
+
+/*
+
+user-registration ends
+*/
+
+
+
+/* Parent Profile Section */
+.parent-profile {
+    margin: 30px auto;
+    padding: 20px;
+    width: 100%;
+    
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.heading {
+    font-size: 3rem;
+    color: var(--orange);
+    margin-bottom: 20px;
+}
+
+.heading span {
+    color: var(--black);
+    text-transform: uppercase;
+}
+
+.profile-info {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+/* Section Titles */
+h2, h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--black);
+}
+
+h3 {
+    color: var(--orange);
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+/* Children Info */
+.children-info {
+    margin-bottom: 20px;
+}
+
+.child-item {
+    background-color: var(--pink);
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.child-item p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.child-item strong {
+    font-weight: bold;
+}
+
+/* Billing Info */
+.billing-info {
+    margin-top: 20px;
+}
+
+.bill-item {
+    background-color: #fff3e0;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.bill-item p {
+    font-size: 1.2rem;
+    margin: 5px 0;
+}
+
+.bill-item strong {
+    font-weight: bold;
+}
+
+
+
+
+
+
+/*
+Caregiver Section
+Includes:
+- Caregiver Registration
+- Search Caregiver
+- Caregiver Profile
+*/
+
+
+
+
+
+
+
+
+
+/*
+parent dashboard starts
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.parent-profile h1 {
+    text-align: center;
+}
+
+.parent-profile {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.parent-info-container {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    text-align: center;
+    background-color: #ffefd5;
+    padding: 20px 0;
+}
+
+.profile-photo {
+    margin-bottom: 15px;
+}
+
+.profile-photo img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.notification {
+    width: 100%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.notification h2 {
+    width: 90%;
+    background-color: #ff8c00;
+    padding: 10px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+}
+
+.notification ul {
+    list-style: none;
+    padding: 0;
+}
+
+.notification h2 {
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.notification ul {
+    list-style: none;
+    padding: 0;
+}
+
+.notification li {
+    margin-bottom: 10px;
+    color: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 1px solid #ff8c00;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+table {
+    border-bottom: 1px solid #ff8c00;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ff8c00;
+}
+
+th {
+    background-color: #ff8c00;
+    color: white;
+}
+
+button.view-btn {
+    padding: 5px 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button.view-btn:hover {
+    background-color: #45a049;
+}
+
+hr {
+    border: 1px solid #ff8c00;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+/*
+parent dashboard ends
+*/
+
+
+

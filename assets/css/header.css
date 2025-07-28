@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+:root{
+    --orange: #f9ba60;
+    --pink: #e9768f;
+    --black: #1d1c1c;
+    --white: #fff;
+    --light-color: #666;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,.1);
+}
+
+* {
+    font-family: 'Poppins', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+/* Header */
+.header {
+    width: 100%; /* Ensure full width for the header */
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    background: var(--white);
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--black);
+}
+
+.header .logo img {
+    height: 30px; /* Adjust this value to make the logo image smaller */
+    width: auto; /* Maintain aspect ratio */
+}
+
+/* Navbar Styling */
+.header .navbar {
+    display: flex;
+    gap: 2rem;
+}
+
+.header .navbar a {
+    text-decoration: none;
+    font-size: 1.8rem;
+    color: var(--black); /* Dark gray */
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.header .navbar a:hover {
+    color: var(--pink); /* Highlight on hover with pink */
+}
+
+/* Icons Styling */
+.header .icons {
+    display: flex;
+    align-items: center;
+    gap: 1.8rem;
+}
+
+.header .icons div {
+    font-size: 2.5rem;
+    color: var(--black); /* Dark gray */
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.header .icons div:hover {
+    color: var(--pink); /* Highlight on hover with pink */
+    transform: scale(1.1); /* Slight scaling effect */
+}
+
+/* Notification Icon Specific Styling */
+#notification-btn {
+    position: relative;
+}
+
+#notification-btn::after {
+    content: '3'; /* Example notification count */
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: var(--pink); /* Use pink for the notification badge */
+    color: var(--white); /* White text */
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 0.2rem 0.4rem;
+    border-radius: 50%;
+}
+
+/* Menu Button Styling (for smaller screens) */
+#menu-btn {
+    display: none; /* Hidden by default */
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    #menu-btn {
+        display: block;
+    }
+
+    .header .navbar {
+        display: none; /* Hide the navbar initially */
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--white); /* White background */
+        box-shadow: var(--box-shadow); /* Apply box shadow */
+    }
+
+    .header .navbar.active {
+        display: flex; /* Show the navbar when active */
+    }
+}
+
+/* Login Form */
+.header .login-form {
+    position: absolute;
+    top: 110%; right: -110%;
+    width: 35rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    border-radius: .5rem;
+    background: var(--white);
+    text-align: center;
+}
+
+.header .login-form.active {
+    right: 2rem;
+    transition: .4s linear;
+}
+
+.header .login-form h3 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+.header .login-form .box {
+    width: 100%;
+    margin: .7rem 0;
+    background: #eee;
+    border-radius: .5rem;
+    padding: 1rem;
+    font-size: 1.6rem;
+    color: var(--black);
+    text-transform: capitalize;
+}
+
+.header .login-form p {
+    font-size: 1.4rem;
+    padding: .5rem 0;
+    color: var(--light-color);
+}
+
+.header .login-form p a {
+    color: var(--orange);
+    text-decoration: underline;
+}
